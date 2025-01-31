@@ -7,11 +7,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        * {
-    box-sizing: border-box;
-}
-
-html {
+        html {
     scroll-behavior: smooth;
 }
 
@@ -32,10 +28,9 @@ body {
     background-attachment: fixed;
     opacity: 0;
     animation: fadeIn 1s forwards;
-    font-size: 16px;
 }
 
-/* For Tablets */
+/* For tablets */
 @media (min-width: 600px) {
     body {
         font-size: 18px;
@@ -50,7 +45,7 @@ body {
     }
 }
 
-/* For Laptops and Desktops */
+/* For laptops and desktops */
 @media (min-width: 1024px) {
     body {
         font-size: 20px;
@@ -116,6 +111,7 @@ nav a:hover {
     border-radius: 15px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     margin-bottom: 50px;
+    min-width: 300px; /* Prevents shrinking too small */
 }
 
 .section.active {
@@ -150,7 +146,6 @@ nav a:hover {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 20px;
 }
 
 .skill-box {
@@ -196,44 +191,32 @@ nav a:hover {
     background-color: #ff9800;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
 .home-section {
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    justify-content: space-between;
+    align-items: center;
     height: 100vh; /* Full screen height */
     background-color: #f9f9f9; /* Light background */
     padding: 0 10%;
     font-family: 'Poppins', sans-serif;
-    flex-wrap: wrap;
-    text-align: center;
 }
 
-.home-section .left {
-    flex-basis: 50%; /* Take 50% of the width */
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.home-section .left h1 {
+/* Left Side */
+.left h1 {
     font-size: 60px;
     font-weight: 700;
     text-transform: uppercase;
     color: #333; /* Dark text for contrast */
 }
 
-.home-section .left p {
-    margin-top: 20px;
-    font-size: 20px;
-    color: #555;
-}
-
-.home-section .right {
+/* Right Side */
+.right {
     text-align: center;
-    flex-basis: 40%;
 }
 
-.home-section .right img {
+.right img {
     width: 250px; /* Adjust size */
     height: auto;
     border-radius: 50%;
@@ -241,7 +224,7 @@ nav a:hover {
     box-shadow: 0px 0px 20px rgba(0, 123, 255, 0.3);
 }
 
-.home-section .right p {
+.right p {
     margin-top: 20px;
     font-size: 20px;
     color: #555;
@@ -300,25 +283,41 @@ nav a:hover {
 }
 
 @media (max-width: 768px) {
-    .home-section {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .home-section .left {
-        flex-basis: 100%;
-        margin-bottom: 20px;
-    }
-
-    .home-section .right {
-        flex-basis: 100%;
-    }
-
     .contact-info {
         grid-template-columns: 1fr; /* Stack items on smaller screens */
     }
+    
+    /* Adjusting padding and font-size on smaller screens */
+    .section {
+        padding: 50px 15px;
+    }
+
+    .section-content h2 {
+        font-size: 2rem;
+    }
+
+    .section-content p {
+        font-size: 1rem;
+    }
+
+    .home-section {
+        flex-direction: column;
+        padding: 0 5%;
+    }
+
+    .left h1 {
+        font-size: 40px;
+    }
+
+    .right img {
+        width: 200px;
+    }
+
+    .right p {
+        font-size: 18px;
+    }
 }
+
 
 
     </style>
