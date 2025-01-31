@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arham Khan - Portfolio</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            background-image: url('m.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        header {
+            position: fixed;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 30px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-bottom: 2px solid #ddd;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            z-index: 10000;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #e0e0e0;
+            margin: 0;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        nav a {
+            color: #a8a8d8;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #5c6bc0;
+            color: #fff;
+        }
+
+        .section {
+            padding: 100px 30px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #333;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 50px;
+        }
+
+        .section.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-content h2 {
+            font-size: 2.5rem;
+            color: #5c6bc0;
+            margin-bottom: 20px;
+        }
+
+        .section-content p {
+            font-size: 1.1rem;
+        }
+        .skills-section {
+  padding: 50px;
+  background-color: #f4f4f4;
+}
+
+.skill-box-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.skill-box {
+  width: 30%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.skill-box h3 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+.sub-skill {
+  margin-bottom: 15px;
+}
+
+.sub-skill-name {
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.progress-bar {
+  height: 20px;
+  background-color: #ddd;
+  border-radius: 10px;
+}
+
+.progress-bar {
+  background-color: #2196f3;
+  transition: width 0.3s ease;
+}
+
+.skill-box-container .skill-box:nth-child(odd) .progress-bar {
+  background-color: #2196f3;
+}
+
+.skill-box-container .skill-box:nth-child(3) .progress-bar {
+  background-color: #ff9800;
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+    .home-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100vh; /* Full screen height */
+        background-color: #f9f9f9; /* Light background */
+        padding: 0 10%;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    /* Left Side */
+    .left h1 {
+        font-size: 60px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #333; /* Dark text for contrast */
+    }
+
+    /* Right Side */
+    .right {
+        text-align: center;
+    }
+
+    .right img {
+        width: 250px; /* Adjust size */
+        height: auto;
+        border-radius: 50%;
+        border: 5px solid #007BFF; /* Blue border to match light theme */
+        box-shadow: 0px 0px 20px rgba(0, 123, 255, 0.3);
+    }
+
+    .right p {
+        margin-top: 20px;
+        font-size: 20px;
+        color: #555;
+        max-width: 400px;
+    }
+    #contact {
+    background-color: #f4f7fc; /* Light background for professional look */
+    padding: 40px 20px;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns for responsiveness */
+    gap: 20px;
+    justify-items: center;
+}
+
+.contact-item {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: left;
+}
+
+.contact-item i {
+    font-size: 24px;
+    color: #5c6bc0;
+    margin-right: 10px;
+}
+
+.contact-item p {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+.contact-item a {
+    text-decoration: none;
+    color: #5c6bc0;
+    transition: all 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .contact-info {
+        grid-template-columns: 1fr; /* Stack items on smaller screens */
+    }
+}
+
+    </style>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<body>
+
+    <header>
+        <h1 id="typed-name"></h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#contact">Contact</a>
+            
+        </nav>
+    </header>
+
+    <div id="home" class="home-section">
+        <!-- Left Side -->
+        <div class="left">
+            <h1>AI DEVELOPER | RESEARCHER | INNOVATOR</h1>
+        </div>
+    
+        <!-- Right Side -->
+        <div class="right">
+            <img src="mine.png" alt="Arham Khan">
+            <p>Hello, I'm <strong>Arham Khan</strong>, an AI Developer specializing in Deep Learning, NLP, and Computer Vision. I build intelligent systems to solve real-world problems.</p>
+        </div>
+    </div>
+
+    <div id="about" class="section">
+        <div class="section-content">
+            <h2>About Me</h2>
+            <p>
+                Arham Khan is a skilled AI Developer with a strong foundation in <strong>Deep Learning, Natural Language Processing (NLP), and Computer Vision</strong>. He specializes in designing and deploying <strong>cutting-edge machine learning models</strong> that drive intelligent automation and solve complex real-world challenges. His expertise spans <strong>image classification, object detection, image segmentation, and NLP-driven applications</strong> such as <strong>chatbots and recommendation systems</strong>.  
+                <br><br>
+                With hands-on experience in <strong>end-to-end AI development</strong>, Arham leverages state-of-the-art frameworks like <strong>TensorFlow, PyTorch, and Hugging Face</strong> to build high-performance solutions. He is adept at <strong>optimizing, fine-tuning, and deploying AI models</strong> using <strong>Flask, FastAPI, Docker, and cloud platforms (AWS, Azure, Vercel)</strong>. His passion for innovation and continuous learning enables him to stay at the forefront of AI advancements.  
+                <br><br>
+                Committed to pushing the boundaries of artificial intelligence, Arham thrives in <strong>fast-paced, collaborative environments</strong>, where he transforms ideas into impactful AI-driven solutions. Beyond his technical expertise, he actively contributes to the <strong>AI community</strong> through research, open-source contributions, and knowledge sharing.
+            </p>
+        </div>
+    </div>
+   
+    
+    <div id="services" class="section">
+        <div class="section-content">
+            <h2>Services</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold text-[#5c6bc0]">Data Analysis</h3>
+                    <p class="text-gray-700 mt-2">Analyse and Visualize Structured and Big Data with profeciency and extract valuable insights for your business needs</p>
+                </div>
+                <!-- Service 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold text-[#5c6bc0]">NLP Solutions</h3>
+                    <p class="text-gray-700 mt-2">Building NLP-driven systems like chatbots, sentiment analysis, and more.</p>
+                </div>
+                <!-- Service 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold text-[#5c6bc0]">Computer Vision Applications</h3>
+                    <p class="text-gray-700 mt-2">Developing computer vision models for image and video analysis.</p>
+                </div>
+                <!-- Service 4 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold text-[#5c6bc0]">Recommendation Systems</h3>
+                    <p class="text-gray-700 mt-2">Designing personalized recommendation engines based on user data.</p>
+                </div>
+                <!-- Service 5 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold text-[#5c6bc0]">Model Deployment</h3>
+                    <p class="text-gray-700 mt-2">Deploying AI models into production using tools like Docker, Flask, etc.</p>
+                </div>
+                <!-- Service 6 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold text-[#5c6bc0]">AI Consultation</h3>
+                    <p class="text-gray-700 mt-2">Providing expert guidance on AI projects and technology stacks.</p>
+                </div>
+                <!-- Service 7 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold text-[#5c6bc0]">Data Analytics</h3>
+                    <p class="text-gray-700 mt-2">Using data-driven insights to improve business processes and decision-making.</p>
+                </div>
+                <!-- Service 8 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold text-[#5c6bc0]">AI Training</h3>
+                    <p class="text-gray-700 mt-2">Training teams to implement and manage AI projects effectively.</p>
+                </div>
+                <!-- Service 9 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold text-[#5c6bc0]">Automated Systems</h3>
+                    <p class="text-gray-700 mt-2">Building AI-powered automation systems for businesses.</p>
+                </div>
+                <!-- Service 10 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold text-[#5c6bc0]">Cloud AI Solutions</h3>
+                    <p class="text-gray-700 mt-2">Designing AI applications that scale on cloud platforms like AWS, GCP, and Azure.</p>
+                </div>
+                <!-- Service 11 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold text-[#5c6bc0]">Edge AI</h3>
+                    <p class="text-gray-700 mt-2">Developing AI solutions for edge devices with low latency and high efficiency.</p>
+                </div>
+                <!-- Service 12 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold text-[#5c6bc0]">AI Research</h3>
+                    <p class="text-gray-700 mt-2">Conducting advanced research to push the boundaries of AI technology.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="projects" class="section">
+        <div class="section-content">
+            <h2 class="text-4xl text-[#5c6bc0] font-semibold mb-6">Projects</h2>
+            <p class="text-lg text-[#333] mb-6 leading-relaxed">Check out my innovative AI and ML projects below.</p>
+            
+            <!-- Project Section in Landscape -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold text-[#5c6bc0]">ALOBOT(Chatbot)</h3>
+                    <p class="text-gray-700 mt-2">A Custom Chatbot Using Gemini API and Frontend using HTML and CSS</p>
+                    <video class="w-full mt-4 rounded-lg" controls>
+                        <source src="video2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <a href="https://github.com/arhamkhan779/Transformers" target="_blank" class="block mt-4 text-right text-[#5c6bc0] font-semibold hover:underline">View Project</a>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold text-[#5c6bc0]">Tumor Detection System</h3>
+                    <p class="text-gray-700 mt-2">A AI base System to streamline thr process of brain tumor detection using You only look once algorithm.</p>
+                    <video class="w-full mt-4 rounded-lg" controls>
+                        <source src="video1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <a href="https://github.com/arhamkhan779/AI-based-Tumor-Detection-System" target="_blank" class="block mt-4 text-right text-[#5c6bc0] font-semibold hover:underline">View Project</a>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold text-[#5c6bc0]">AI Base Plagiarism Detection Tool</h3>
+                    <p class="text-gray-700 mt-2">AI system to detect plagiarism using NLP algorithm Bidirectional LSTM.</p>
+                    <video class="w-full mt-4 rounded-lg" controls>
+                        <source src="video3.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <a href="https://github.com/arhamkhan779/AIvsHumanTextClassification" target="_blank" class="block mt-4 text-right text-[#5c6bc0] font-semibold hover:underline">View Project</a>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold text-[#5c6bc0]">Qr Code Detection System</h3>
+                    <p class="text-gray-700 mt-2">A Qrcode Detection system develop using pyzbar api of python.</p>
+                    <video class="w-full mt-4 rounded-lg" controls>
+                        <source src="video4.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <a href="https://github.com/arhamkhan779/QrCodeDetection/" target="_blank" class="block mt-4 text-right text-[#5c6bc0] font-semibold hover:underline">View Project</a>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold text-[#5c6bc0]">Breast Cancer Detection</h3>
+                    <p class="text-gray-700 mt-2">An AI system to streamline the process of breast cancer using Convolutional neural network.</p>
+                    <video class="w-full mt-4 rounded-lg" controls>
+                        <source src="video5.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <a href="https://github.com/arhamkhan779/BreastCancerClassification" target="_blank" class="block mt-4 text-right text-[#5c6bc0] font-semibold hover:underline">View Project</a>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold text-[#5c6bc0]">Code Snippet Generator</h3>
+                    <p class="text-gray-700 mt-2">A Generative AI application to generate code snippet by prompt using LLM(AutoModelForConditionalGeneration)</p>
+                    <video class="w-full mt-4 rounded-lg" controls>
+                        <source src="video6.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <a href="https://github.com/arham/recommendation-system" target="_blank" class="block mt-4 text-right text-[#5c6bc0] font-semibold hover:underline">View Project</a>
+                </div>
+
+                <!-- Project 7 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold text-[#5c6bc0]">Weather Forecasting System</h3>
+                    <p class="text-gray-700 mt-2">A predictive model to forecast weather condition based on historical data using machine learning algorithms.</p>
+                    <video class="w-full mt-4 rounded-lg" controls>
+                        <source src="video7.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <a href="https://github.com/arhamkhan779/WeatherPredictionSystem" target="_blank" class="block mt-4 text-right text-[#5c6bc0] font-semibold hover:underline">View Project</a>
+                </div>
+
+                <!-- Project 8 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold text-[#5c6bc0]">Paaraphrase Generator</h3>
+                    <p class="text-gray-700 mt-2">An LLM base application to generate paraphrases.</p>
+                    <video class="w-full mt-4 rounded-lg" controls>
+                        <source src="video8.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <a href="https://github.com/arhamkhan779/Transformers/tree/main/Pharagraphgenerator" target="_blank" class="block mt-4 text-right text-[#5c6bc0] font-semibold hover:underline">View Project</a>
+                </div>
+
+                <!-- Project 9 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold text-[#5c6bc0]">Content Moderation System</h3>
+                    <p class="text-gray-700 mt-2">An AI model to moderate the text and image realted content for privacy.</p>
+                    <video class="w-full mt-4 rounded-lg" controls>
+                        <source src="video9.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <a href="https://github.com/arhamkhan779/AI-base-Content-Moderation-System" target="_blank" class="block mt-4 text-right text-[#5c6bc0] font-semibold hover:underline">View Project</a>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-semibold text-[#5c6bc0]">Student Attendance System</h3>
+                    <p class="text-gray-700 mt-2">A software that streamline the process of attendance of student with facial recognition and email system.</p>
+                    <video class="w-full mt-4 rounded-lg" controls>
+                        <source src="video10.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <a href="https://github.com/arhamkhan779/Student-Attendance-System-Using-Facial-Recognition" target="_blank" class="block mt-4 text-right text-[#5c6bc0] font-semibold hover:underline">View Project</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="skills">
+        <h2 class="text-4xl text-[#5c6bc0] font-semibold mb-6">Skills</h2>
+
+        <div class="skill-box-container">
+          <!-- Programming Languages Box -->
+          <div class="skill-box">
+            <h3>Programming Languages</h3>
+            <div class="sub-skill">
+              <div class="sub-skill-name">Python</div>
+              <div class="progress-bar" style="width: 90%"></div>
+            </div>
+            <div class="sub-skill">
+              <div class="sub-skill-name">Java</div>
+              <div class="progress-bar" style="width: 80%"></div>
+            </div>
+            <div class="sub-skill">
+              <div class="sub-skill-name">C++</div>
+              <div class="progress-bar" style="width: 70%"></div>
+            </div>
+            <div class="sub-skill">
+              <div class="sub-skill-name">SQL</div>
+              <div class="progress-bar" style="width: 75%"></div>
+            </div>
+          </div>
+      
+          <!-- Artificial Intelligence Box -->
+          <div class="skill-box">
+            <h3>Artificial Intelligence</h3>
+            <div class="sub-skill">
+              <div class="sub-skill-name">Machine Learning</div>
+              <div class="progress-bar" style="width: 85%"></div>
+            </div>
+            <div class="sub-skill">
+              <div class="sub-skill-name">Deep Learning</div>
+              <div class="progress-bar" style="width: 90%"></div>
+            </div>
+            <div class="sub-skill">
+              <div class="sub-skill-name">Generative AI</div>
+              <div class="progress-bar" style="width: 80%"></div>
+            </div>
+          </div>
+      
+          <!-- Cloud Computing Box -->
+          <div class="skill-box">
+            <h3>Cloud Computing & Deployment</h3>
+            <div class="sub-skill">
+              <div class="sub-skill-name">AWS</div>
+              <div class="progress-bar" style="width: 85%"></div>
+            </div>
+            <div class="sub-skill">
+              <div class="sub-skill-name">Azure</div>
+              <div class="progress-bar" style="width: 75%"></div>
+            </div>
+            <div class="sub-skill">
+              <div class="sub-skill-name">Vercel</div>
+              <div class="progress-bar" style="width: 70%"></div>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Second Row of Skill Boxes -->
+        <div class="skill-box-container">
+          <!-- Programming Designs Box -->
+          <div class="skill-box">
+            <h3>Programming Designs</h3>
+            <div class="sub-skill">
+              <div class="sub-skill-name">OOP</div>
+              <div class="progress-bar" style="width: 90%"></div>
+            </div>
+            <div class="sub-skill">
+              <div class="sub-skill-name">Modular Architecture</div>
+              <div class="progress-bar" style="width: 80%"></div>
+            </div>
+            <div class="sub-skill">
+              <div class="sub-skill-name">Functional</div>
+              <div class="progress-bar" style="width: 70%"></div>
+            </div>
+          </div>
+      
+          <!-- Servers Box -->
+          <div class="skill-box">
+            <h3>Servers</h3>
+            <div class="sub-skill">
+              <div class="sub-skill-name">Flask</div>
+              <div class="progress-bar" style="width: 85%"></div>
+            </div>
+            <div class="sub-skill">
+              <div class="sub-skill-name">FastAPI</div>
+              <div class="progress-bar" style="width: 80%"></div>
+            </div>
+          </div>
+      
+          <!-- UI Development Box -->
+          <div class="skill-box">
+            <h3>UI Development</h3>
+            <div class="sub-skill">
+              <div class="sub-skill-name">HTML</div>
+              <div class="progress-bar" style="width: 95%"></div>
+            </div>
+            <div class="sub-skill">
+              <div class="sub-skill-name">CSS</div>
+              <div class="progress-bar" style="width: 85%"></div>
+            </div>
+          </div>
+        </div>
+      </div>      
+
+
+
+    <div id="experience" class="section">
+        <div class="section-content">
+            <h2>Experience</h2>
+            <div style="display: flex; flex-direction: column; gap: 20px; font-family: 'Poppins', sans-serif;">
+                <!-- Experience 1 -->
+                <div style="display: flex; justify-content: space-between; align-items: center; font-size: 1.1rem; padding: 10px; background-color: rgba(255, 255, 255, 0.8); border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); transition: all 0.3s ease;">
+                    <p style="color: #5c6bc0; font-weight: 600;">Digital Empowerment Pakistan</p>
+                    <p style="text-align: right; color: #333; font-weight: 500;">Machine Learning Intern</p>
+                </div>
+                <p style="font-size: 1rem; color: #333; padding-left: 20px; padding-right: 20px;">Worked with a team of data scientists to design and implement machine learning models for various applications. Contributed to the development of predictive models, focusing on data preprocessing, model optimization, and evaluation.</p>
+    
+                <!-- Experience 2 -->
+                <div style="display: flex; justify-content: space-between; align-items: center; font-size: 1.1rem; padding: 10px; background-color: rgba(255, 255, 255, 0.8); border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); transition: all 0.3s ease;">
+                    <p style="color: #5c6bc0; font-weight: 600;">ITsolera</p>
+                    <p style="text-align: right; color: #333; font-weight: 500;">Deep Learning Intern Lead</p>
+                </div>
+                <p style="font-size: 1rem; color: #333; padding-left: 20px; padding-right: 20px;">Led the deep learning internship program, mentoring a team of interns to develop cutting-edge models for computer vision and NLP tasks. Focused on training deep neural networks for real-world applications such as object detection and text classification.</p>
+    
+                <!-- Experience 3 -->
+                <div style="display: flex; justify-content: space-between; align-items: center; font-size: 1.1rem; padding: 10px; background-color: rgba(255, 255, 255, 0.8); border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); transition: all 0.3s ease;">
+                    <p style="color: #5c6bc0; font-weight: 600;">ITsolera</p>
+                    <p style="text-align: right; color: #333; font-weight: 500;">AI Project-Based Associate</p>
+                </div>
+                <p style="font-size: 1rem; color: #333; padding-left: 20px; padding-right: 20px;">Collaborated with cross-functional teams to design and deploy AI-driven solutions for clients. Focused on developing personalized recommendation systems, chatbots, and machine learning models tailored to specific business needs.</p>
+            </div>
+        </div>
+    </div>
+    
+
+    <div id="contact" class="section">
+        <div class="section-content">
+            <h2>Contact</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <p><a href="mailto:ak06598909@gmail.com">ak06598909@gmail.com</a></p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <p><a href="mailto:Arhamkhn134@gmail.com">Arhamkhn134@gmail.com</a></p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <p><a href="tel:+923003020167">+92 3003020167</a></p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <p><a href="tel:+923377251421">+92 3377251421</a></p>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <p><a href="https://www.linkedin.com/in/arhamkhannn" target="_blank">LinkedIn: arhamkhannn</a></p>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-github"></i>
+                    <p><a href="https://github.com/arhamkhan779" target="_blank">GitHub: arhamkhan779</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach((section) => {
+                const sectionTop = section.getBoundingClientRect().top;
+                if (sectionTop < window.innerHeight * 0.8) {
+                    section.classList.add('active');
+                }
+            });
+        });
+
+        new Typed("#typed-name", {
+            strings: ["Arham Khan"],
+            typeSpeed: 100,
+            backSpeed: 50,
+            backDelay: 1000,
+            startDelay: 500,
+            loop: false,
+        });
+
+    </script>
+</body>
+</html>
